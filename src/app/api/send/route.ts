@@ -3,7 +3,7 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || "re_placeholder_key");
 
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_MAX = 3;
@@ -27,6 +27,11 @@ const Email = z.object({
 });
 export async function POST(req: Request) {
   try {
+    // Check if API key is configured
+    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === "re_placeholder_key") {
+      return Response.json({ error: "Email service not configured. Please contact the site administrator." }, { status: 503 });
+    }
+
     const ip = req.headers.get("x-forwarded-for") ?? "unknown";
     if (isRateLimited(ip)) {
       return Response.json({ error: "Too many requests. Please try again later." }, { status: 429 });
