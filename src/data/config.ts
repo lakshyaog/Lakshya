@@ -16,7 +16,7 @@ const config = {
     "Next.js",
   ],
   author: "Lakshya Solanki",
-  email: "contact@example.com",
+  email: "lakshyasolanki904@gmail.com",
   site: "https://yoursite.com",
 
   // for github stars button

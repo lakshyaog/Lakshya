@@ -179,6 +179,12 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <RiReactjsFill />,
   },
+  three: {
+    title: "Three.js",
+    bg: "black",
+    fg: "white",
+    icon: <SiThreedotjs />,
+  },
   sanity: {
     title: "Sanity",
     bg: "black",
@@ -317,132 +323,55 @@ const projects: Project[] = [
     },
   },
   {
-    id: "the-booking-desk",
-    category: "Travel",
-    title: "The Booking Desk",
-    src: "/assets/projects-screenshots/the-booking-desk/landing.png",
-    screenshots: ["1.png"],
-    live: "https://thebookingdesk.com/",
+    id: "bmw-showcase",
+    category: "3D Showcase",
+    title: "BMW M4 Competition 3D Experience",
+    src: "/assets/bmw1.png",
+    screenshots: ["bmw2.png", "bmw3.png", "bmw4.png"],
+    live: "https://bmwftw.vercel.app/",
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.aceternity,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.three,
         PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.framerMotion,
       ],
-      backend: [PROJECT_SKILLS.sanity],
     },
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            The Booking Desk is your ultimate travel consultation hub, designed
-            to turn your wanderlust dreams into reality. With a focus on smooth
-            and visually captivating animations, navigating the site feels like
-            a breeze—it&apos;s almost as if the destinations are calling you.
+          <TypographyP className="font-mono">
+            An immersive 3D web experience showcasing the BMW M4 Competition with stunning Blender-rendered models. This interactive showcase brings automotive excellence to life through cutting-edge web technologies and smooth animations.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <p className="font-mono mb-2 mt-8">
-            A sleek, modern interface greets you, featuring the latest travel
-            tips, deals, and must-visit spots around the globe.
+            The landing experience features a cinematic intro with a high-fidelity 3D model of the M4, setting the tone for an unforgettable journey through BMW's engineering masterpiece.
           </p>
-          <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
-          <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
+          <SlideShow images={[`/assets/bmw1.png`]} />
+          
+          <TypographyH3 className="my-4 mt-8">Exterior Design</TypographyH3>
           <p className="font-mono mb-2">
-            Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog section has
-            you covered.
+            Explore every angle of the M4's aggressive design—from the muscular widebody stance with 19" forged wheels to the aerodynamically sculpted carbon fiber roof. The side profile reveals flared fenders and performance-driven aesthetics that define M DNA.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/blogs.png`,
-              `${BASE_PATH}/the-booking-desk/blog.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
+          <SlideShow images={[`/assets/bmw2.png`]} />
 
+          <TypographyH3 className="my-4 mt-8">Performance & Power</TypographyH3>
           <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity CMS
-            to manage all the content with ease, ensuring you always get the
-            latest and greatest information.
+            Dive deep into the heart of the beast—the iconic S58 inline-6 engine delivering 530 HP and 650 Nm of torque. With M xDrive all-wheel-drive and a blistering 0-100 km/h in just 3.4 seconds, the M4 Competition redefines performance driving.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/the-booking-desk/cms-1.png`,
-              `${BASE_PATH}/the-booking-desk/cms-2.png`,
+              `/assets/bmw3.png`,
+              `/assets/bmw4.png`,
             ]}
           />
+
+          <TypographyH3 className="my-4 mt-8">Interactive 3D Experience</TypographyH3>
+          <p className="font-mono mb-2">
+            Built with Three.js and React Three Fiber, the showcase features real-time 3D rendering of Blender models with smooth scroll-based animations. Users can explore the exterior, powertrain, and interior details through an intuitive, immersive interface that responds to every interaction.
+          </p>
           <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk isn&apos;t
-            just beautiful—it&apos;s built to perform. Whether you&apos;re planning your
-            next adventure or just daydreaming, our site delivers a top-notch
-            experience that&apos;s both informative and enjoyable.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "portfolio",
-    category: "Portfolio",
-    title: "My Portfolio",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
-    screenshots: ["1.png"],
-    live: "http://nareshkhatri.vercel.app",
-    github:"https://github.com/Naresh-Khatri/Portfolio",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.framerMotion,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.spline,
-      ],
-      backend: [],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
-          <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/projects.png`,
-              `${BASE_PATH}/portfolio/project.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
+            This project demonstrates the power of combining 3D modeling with modern web technologies to create engaging, performance-optimized experiences that push the boundaries of what's possible in the browser.
           </p>
         </div>
       );
