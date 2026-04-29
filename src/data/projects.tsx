@@ -336,6 +336,7 @@ const projects: Project[] = [
         PROJECT_SKILLS.tailwind,
         PROJECT_SKILLS.framerMotion,
       ],
+      backend: [],
     },
     get content() {
       return (
