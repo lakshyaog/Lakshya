@@ -111,7 +111,7 @@ function CooldownRing({ cooldownEndRef, position }: {
 }) {
   const circleRef = useRef<SVGCircleElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const cooldownStartRef = useRef(0);
+  const cooldownStartRef = useRef<number>(0);
 
   useEffect(() => {
     let raf: number;

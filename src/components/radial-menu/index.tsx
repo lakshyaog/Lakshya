@@ -36,17 +36,17 @@ export default function RadialMenu() {
   const [shockwaves, setShockwaves] = useState<ShockwaveData[]>([]);
 
   // Refs
-  const isOpenRef = useRef(false);
-  const isDisabledRef = useRef(false);
+  const isOpenRef = useRef<boolean>(false);
+  const isDisabledRef = useRef<boolean>(false);
   const menuPosRef = useRef<Position>({ x: 0, y: 0 });
   const activeIndexRef = useRef<number | null>(null);
-  const intensityRef = useRef(0);
+  const intensityRef = useRef<number>(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const suppressMenuRef = useRef(false);
+  const suppressMenuRef = useRef<boolean>(false);
 
   // Cooldown
-  const cooldownUntilRef = useRef(0);
-  const cooldownEndRef = useRef(0); // timestamp when cooldown ends (for ring animation)
+  const cooldownUntilRef = useRef<number>(0);
+  const cooldownEndRef = useRef<number>(0); // timestamp when cooldown ends (for ring animation)
 
   // Track our own triggers to ignore echos
   const myTriggersRef = useRef<Set<string>>(new Set());
