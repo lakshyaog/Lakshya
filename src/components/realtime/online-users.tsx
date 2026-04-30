@@ -337,7 +337,7 @@ const OnlineUsers = () => {
               msgs={msgs}
               users={users}
               currentUser={currentUser}
-              chatContainerRef={chatContainer}
+              chatContainerRef={chatContainer as React.RefObject<HTMLDivElement>}
               showScrollButton={showScrollButton}
               unreads={unreads}
               scrollToBottom={scrollToBottom}
